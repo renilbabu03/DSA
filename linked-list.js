@@ -6,10 +6,7 @@ class Node {
 }
 class LinkedList {
     constructor(value) {
-        this.head = {
-            value: value,
-            next: null
-        }
+        this.head = new Node(value);
 
         this.tail = this.head;
         this.length = 1;
@@ -51,10 +48,7 @@ class LinkedList {
             return this.append(value);
         }
 
-        const newNode = {
-            value: value,
-            next: null
-        }
+        const newNode = new Node(val)
         const leader = this.traverseToIndex(index - 1);
         const holdingPointer = leader.next;
         leader.next = newNode;
